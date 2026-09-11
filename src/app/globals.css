@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette */
+  --background: #FBF9F4; /* warm ivory */
+  --foreground: #1A1A1A;
+  --navy: #1B2A56;
+  --plum: #5B4B63;
+  --price-pill: #C4B5D4; /* soft lavender/purple */
+  --muted: #6B6570;
+  --border: #E8E4DC;
+  --card: #FFFFFF;
+  --success: #2D6A4F;
+  --warning: #B45309;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-plum: var(--plum);
+  --color-price-pill: var(--price-pill);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-display);
+}
+
+/* Force light brand theme even inside Telegram */
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Telegram safe areas */
+.tg-safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.tg-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Utility for price pills matching Instagram aesthetic */
+.price-pill {
+  background: var(--price-pill);
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  letter-spacing: 0.01em;
+}
+
+.store-badge {
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Smooth image loading */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide scrollbar on category rails */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
